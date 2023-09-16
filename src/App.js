@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import './index.css';
 
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 
@@ -26,19 +27,22 @@ const App = () => {
   if (!data) return (<p>ロード中...</p>);
   else return (
     <UserDataList data={data} />
-
   );
 }
 
 const UserDataList = ({ data }) => {
   return (
-    <ul>
-      {data.map((item, index) => (
-        <li key={index}>
-          {index + 1}位: {item.username}さん {item.score}点
-        </li>
-      ))}
-    </ul>
+    <table className='w-full'>
+      <tbody className='w-full'>
+        {data.map((item, index) => (
+          <tr key={index}  id={"ban" + (index + 1)} className='w-9/12 h-[100px] bg-slate-100 rounded flex justify-around mx-auto my-3 text-3xl font-medium shadow-xl'>
+            <td className='w-2/12 text-left my-auto'>{index + 1}位</td>
+            <td className="w-6/12 text-left my-auto">{item.username}</td>
+            <td className='w-2/12 text-right my-auto'>{item.score}点</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
