@@ -39,13 +39,18 @@ const App = () => {
 }
 
 const UserDataList = ({ data }) => {
+  const filteredData = data.filter((item) => item.score !== 0);
   return (
     <table className='w-full'>
       <tbody className='w-full'>
-        {data.map((item, index) => (
-          <tr key={index} id={"ban" + (item.rank)} className='w-9/12 h-[100px] bg-slate-100 rounded flex justify-around mx-auto my-3 text-3xl font-medium shadow-xl'>
+        {filteredData.map((item, index) => (
+          <tr
+            key={index}
+            id={"ban" + (item.rank)}
+            className={`w-9/12 h-[100px] bg-slate-200 rounded flex justify-around mx-auto my-3 text-3xl font-medium shadow-xl`}
+          >
             <td className='w-2/12 text-left my-auto'>{item.rank}位</td>
-            <td className="w-6/12 text-left my-auto">{item.username}</td>
+            <td className="name w-6/12 text-left my-auto">{item.username}</td>
             <td className='w-2/12 text-right my-auto'>{item.score}点</td>
           </tr>
         ))}

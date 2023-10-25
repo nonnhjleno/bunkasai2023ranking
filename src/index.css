@@ -14,16 +14,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.name{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
 
 #ban1{
   background: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
   font-weight: bold;
+  height: 130px;
 }
 
 #ban2{
   background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
+  height: 110px;
 }
 
 #ban3{
   background: linear-gradient(45deg, #874D33 0%, #B87156 45%, #DFAE94 70%, #B87156 85%, #874D33 90% 100%);
+  height: 90px;
 }
