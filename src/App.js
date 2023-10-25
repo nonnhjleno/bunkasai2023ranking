@@ -34,7 +34,10 @@ const App = () => {
 
   if (!data) return (<p>ロード中...</p>);
   else return (
-    <UserDataList data={data} />
+    <>
+      <p className=' text-2xl'>合計 <span>{data.length}</span>人</p>
+      <UserDataList data={data} />
+    </>
   );
 }
 
