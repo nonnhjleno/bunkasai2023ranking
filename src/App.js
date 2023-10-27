@@ -35,7 +35,7 @@ const App = () => {
   if (!data) return (<p>ロード中...</p>);
   else return (
     <>
-      <p className=' text-2xl'>合計 <span>{data.length}</span>人</p>
+      <p className=' text-2xl'>合計 <span>{data.filter((item) => item.score !== 0).length}</span>人</p>
       <UserDataList data={data} />
     </>
   );
