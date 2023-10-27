@@ -35,7 +35,7 @@ const App = () => {
   if (!data) return (<p>ロード中...</p>);
   else return (
     <>
-      <p className=' text-2xl'>合計 <span>{data.filter((item) => item.score !== 0).length}</span>人</p>
+      <Header data={data} />
       <UserDataList data={data} />
     </>
   );
@@ -59,6 +59,15 @@ const UserDataList = ({ data }) => {
         ))}
       </tbody>
     </table>
+  );
+}
+
+const Header = ({ data }) => {
+  return (
+    <header className=' w-full bg-black h-28 flex justify-around items-center'>
+      <p className=' text-4xl text-white'>合計 <span>{data.filter((item) => item.score !== 0).length}</span>人</p>
+      <h1 className=' text-5xl text-white '>パックマンランキング</h1>
+    </header>
   );
 }
 
