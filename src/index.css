@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "マルミーニャ";
+  src: url(x12y12pxMaruMinya.ttf);
+}
+*{
+  font-family: "マルミーニャ";
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
